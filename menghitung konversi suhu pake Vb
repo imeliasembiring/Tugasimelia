@@ -1,0 +1,43 @@
+Public Class Form1
+    Dim tutup As String
+	
+    Private Sub Celcius_Click(sender As Object, e As EventArgs) Handles Celcius.Click
+        TextBox2.Text = (4 / 5) * Val(TextBox1.Text)
+        TextBox3.Text = ((9 / 5) * Val(TextBox1.Text)) + 32
+        TextBox4.Text = Val(TextBox1.Text) + 273
+    End Sub
+
+    Private Sub Reamur_Click(sender As Object, e As EventArgs) Handles Reamur.Click
+        TextBox1.Text = (5 / 4) * Val(TextBox2.Text)
+        TextBox3.Text = ((9 / 4) * Val(TextBox2.Text)) + 32
+        TextBox4.Text = ((5 / 4) * Val(TextBox2.Text)) + 273
+    End Sub
+
+    Private Sub Fahrenheit_Click(sender As Object, e As EventArgs) Handles Fahrenheit.Click
+        TextBox1.Text = (5 / 9) * (Val(TextBox3.Text) - 32)
+        TextBox2.Text = (4 / 9) * (Val(TextBox3.Text) - 32)
+        TextBox4.Text = ((5 / 9) * (Val(TextBox3.Text) - 32)) + 273
+    End Sub
+
+    Private Sub Kelvin_Click(sender As Object, e As EventArgs) Handles Kelvin.Click
+        TextBox1.Text = Val(TextBox4.Text) - 273
+        TextBox2.Text = (4 / 5) * (Val(TextBox4.Text) - 273)
+        TextBox3.Text = ((9 / 5) * (Val(TextBox4.Text) - 273)) + 32
+    End Sub
+
+    Private Sub btnHapus_Click(sender As Object, e As EventArgs) Handles btnHapus.Click
+        TextBox1.Text = ""
+        TextBox2.Text = ""
+        TextBox3.Text = ""
+        TextBox4.Text = ""
+    End Sub
+	
+    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+        tutup = MessageBox.Show("Anda yakin tutup form ini ?", "Keluar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If tutup = MsgBoxResult.Yes Then
+            End
+        Else
+        End If
+    End Sub
+
+End Class
